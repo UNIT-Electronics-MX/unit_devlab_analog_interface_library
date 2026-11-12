@@ -1,0 +1,51 @@
+#######################################
+# Syntax Coloring Map For DevLab_AnalogInterface
+#######################################
+
+DevLab_AnalogInterface	KEYWORD1
+DevLab_AnalogInterface_State	KEYWORD1
+DevLab_AnalogGpioMode	KEYWORD1
+
+begin	KEYWORD2
+beginRecovered	KEYWORD2
+readRaw	KEYWORD2
+readMillivolts	KEYWORD2
+readVolts	KEYWORD2
+readPercentage	KEYWORD2
+readAboveThreshold	KEYWORD2
+readThresholds	KEYWORD2
+setThresholds	KEYWORD2
+setThresholdsMillivolts	KEYWORD2
+resetThresholds	KEYWORD2
+readStatus	KEYWORD2
+poll	KEYWORD2
+setGpioMode	KEYWORD2
+readGpioMode	KEYWORD2
+readGpio	KEYWORD2
+gpioInput	KEYWORD2
+gpioWrite	KEYWORD2
+gpioFollowThreshold	KEYWORD2
+setSupplyMillivolts	KEYWORD2
+supplyMillivolts	KEYWORD2
+busReady	KEYWORD2
+isConnected	KEYWORD2
+address	KEYWORD2
+deviceInfo	KEYWORD2
+printInfo	KEYWORD2
+protocol	KEYWORD2
+bus	KEYWORD2
+
+DEVICE_ID	LITERAL1
+DEFAULT_ADDRESS	LITERAL1
+DEFAULT_CLOCK	LITERAL1
+ADC_MAX	LITERAL1
+DEFAULT_SUPPLY_MV	LITERAL1
+STATUS_ABOVE	LITERAL1
+STATUS_EDGE	LITERAL1
+STATUS_ADC_ERROR	LITERAL1
+STATUS_GPIO_HIGH	LITERAL1
+Input	LITERAL1
+OutputLow	LITERAL1
+OutputHigh	LITERAL1
+FollowThreshold	LITERAL1
+FollowThresholdInverted	LITERAL1
