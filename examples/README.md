@@ -17,9 +17,14 @@
 | `gpio/gpioHostAlarm` | The sketch drives PB5 as an alarm with its own limits in millivolts. |
 | `gpio/gpioModeConsole` | Serial console to try every PB5 mode and read the pin. |
 | `i2c/i2c_scanner` | Lists every address on the bus and marks the UE0177. |
+| `i2c/changeAddress` | Serial console to change the I2C address of the module (`change 39 40`) or restore the factory address (`factory 40`). Needs firmware 0.4. |
 
-Device ID `0x0119`, factory I2C address `0x39`, I2C at 100 kHz. The firmware
-cannot change its address, so there is no address-change example.
+Device ID `0x0119`, factory I2C address `0x39`, I2C at 100 kHz. Firmware 0.4
+and newer can change the address (`i2c/changeAddress`): it is stored in the
+Flash of the module, so it survives a power cycle, and `factory` restores
+`0x39`. The other examples use the factory address; if you moved the module,
+replace `DevLab_AnalogInterface::DEFAULT_ADDRESS` with the new address in their
+`DevLab_AnalogInterface analog(...)` line.
 
 `begin()` always sends the PB5 mode, so each sketch starts from a known pin
 state even if only the master was restarted. The signal enters through JP2

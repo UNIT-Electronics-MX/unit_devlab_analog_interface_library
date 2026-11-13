@@ -11,7 +11,7 @@ output that follows an analog threshold.
 ## Features
 
 - DDP 1.x master through the `DevLabDDP` dependency
-- Device identification (Device ID `0x0119`, factory address `0x39`) in `begin()`
+- Device identification (Device ID `0x0119`, factory address `0x39`, changeable) in `begin()`
 - 12-bit ADC count, voltage in mV or V for a 3.3 V or 5 V supply, percentage
 - Software threshold with hysteresis, debounce and edge events
 - GPIO configured from `begin()`: input, output low/high, or output that
@@ -91,13 +91,16 @@ GPIO modes (`DevLab_AnalogGpioMode`): `Input` (pull-up), `OutputLow`,
 - **RP2040/RP2350 masters.** The I2C controller is fixed by the pin: SDA on
   GPIO 0, 4, 8, ... 24 is I2C0 (`Wire`) and on GPIO 2, 6, 10, ... is I2C1
   (`Wire1`). The examples choose the object from the SDA pin.
-- **Address.** The I2C address is fixed (`0x39`). I2C runs at 100 kHz.
+- **Address.** The factory address is `0x39`. With firmware 0.4 or newer it can
+  be changed (see `examples/i2c/changeAddress`); the module stores the new
+  address in Flash and keeps it after a power cycle. Create the driver with it:
+  `DevLab_AnalogInterface analog(Wire, 0x40);`. I2C runs at 100 kHz.
 
 ## Examples
 
 See [examples/README.md](examples/README.md): analog reads (`adc/`), the GPIO as
 input, output, threshold follower, host-driven alarm and a mode console
-(`gpio/`), and an I2C scanner (`i2c/`).
+(`gpio/`), an I2C scanner and an address changer (`i2c/`).
 
 ## Installation
 

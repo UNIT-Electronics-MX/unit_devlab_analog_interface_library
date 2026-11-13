@@ -47,7 +47,8 @@ public:
     /* DDP Device ID of the UE0177 module (DDP_DEVICE_ID in firmware). */
     static constexpr uint16_t DEVICE_ID = 0x0119U;
 
-    /* Factory I2C address (STARTUP_I2C_ADDRESS). The firmware cannot change it. */
+    /* Factory I2C address (STARTUP_I2C_ADDRESS). Firmware 0.4 and newer can store
+     * another one (see examples/i2c/changeAddress); pass it to the constructor. */
     static constexpr uint8_t DEFAULT_ADDRESS = 0x39U;
 
     /* The firmware runs its I2C slave at 100 kHz. */
