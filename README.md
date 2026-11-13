@@ -91,10 +91,9 @@ GPIO modes (`DevLab_AnalogGpioMode`): `Input` (pull-up), `OutputLow`,
 - **RP2040/RP2350 masters.** The I2C controller is fixed by the pin: SDA on
   GPIO 0, 4, 8, ... 24 is I2C0 (`Wire`) and on GPIO 2, 6, 10, ... is I2C1
   (`Wire1`). The examples choose the object from the SDA pin.
-- **Address.** The factory address is `0x39`. With firmware 0.4 or newer it can
+- **Address.** The factory address is `0x39`.It can
   be changed (see `examples/i2c/changeAddress`); the module stores the new
-  address in Flash and keeps it after a power cycle. Create the driver with it:
-  `DevLab_AnalogInterface analog(Wire, 0x40);`. I2C runs at 100 kHz.
+  address in Flash and keeps it after a power cycle. I2C runs at 100 kHz.
 
 ## Examples
 
